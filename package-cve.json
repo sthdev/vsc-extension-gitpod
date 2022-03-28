@@ -1,0 +1,86 @@
+{
+    "name": "vsc-example-extension",
+    "displayName": "VS Code example extension",
+    "description": "",
+    "repository": "https://github.com/sthdev/vsc-extension-gitpod",
+    "version": "1.0.0",
+    "engines": {
+      "vscode": "^1.65.0"
+    },
+    "categories": [
+      "Other"
+    ],
+    "activationEvents": [
+      "onView:requirements",
+      "onLanguage:markdown"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+      "markdown.markdownItPlugins": true,
+      "views": {
+        "requirements-explorer": [
+          {
+            "id": "requirements",
+            "name": "Requirements",
+            "contextualTitle": "Requirements"
+          }
+        ]
+      },
+      "viewsContainers": {
+        "activitybar": [
+          {
+            "id": "requirements-explorer",
+            "title": "Requirements",
+            "icon": "res/icon.svg"
+          }
+        ]
+      }
+    },
+    "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "clean": "rm -rfv out .nyc_output coverage",
+      "watch": "tsc -watch -p ./",
+      "pretest": "npm run compile && npm run lint",
+      "lint": "eslint src --ext ts",
+      "test": "node ./out/test/runTest.js",
+      "test-ci": "xvfb-run -a npm run test",
+      "prepare": "husky install",
+      "package": "vsce package"
+    },
+    "devDependencies": {
+      "@istanbuljs/nyc-config-typescript": "^1.0.2",
+      "@types/chai": "^4.3.0",
+      "@types/glob": "^7.2.0",
+      "@types/markdown-it": "^12.2.3",
+      "@types/mocha": "^9.1.0",
+      "@types/node": "14.x",
+      "@types/sinon": "^10.0.11",
+      "@types/vscode": "^1.65.0",
+      "@typescript-eslint/eslint-plugin": "^5.12.1",
+      "@typescript-eslint/parser": "^5.12.1",
+      "@vscode/test-electron": "^2.1.2",
+      "chai": "^4.3.6",
+      "eslint": "^8.11.0",
+      "eslint-config-prettier": "^8.5.0",
+      "glob": "^7.2.0",
+      "husky": "^7.0.4",
+      "lint-staged": "^12.3.7",
+      "mocha": "^9.2.1",
+      "moq.ts": "^7.3.4",
+      "nyc": "^15.1.0",
+      "prettier": "^2.6.0",
+      "sinon": "^13.0.1",
+      "sinon-chai": "^3.7.0",
+      "ts-mockito": "^2.6.1",
+      "ts-node": "^10.7.0",
+      "ts-sinon": "^2.0.2",
+      "typescript": "^4.5.5",
+      "vsce": "^2.7.0"
+    },
+    "dependencies": {
+      "angular": "1.5.0",
+      "markdown-it": "^12.3.2"
+    }
+  }
+  

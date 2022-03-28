@@ -1,5 +1,15 @@
+
 tasks:
   - init: |
       echo 'TODO: build project'
     command: |
       echo 'TODO: start app'
+vscode:
+  extensions:
+    - ryanluker.vscode-coverage-gutters
+    - EditorConfig.EditorConfig
+    - dbaeumer.vscode-eslint
+    - eamodio.gitlens
+    - christian-kohler.npm-intellisense
+    - eg2.vscode-npm-script
+    - esbenp.prettier-vscode

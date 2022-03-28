@@ -1,0 +1,5 @@
+# see https://www.aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git/#bonus-create-an-editorconfig-file
+root = true
+
+[*]
+end_of_line = lf

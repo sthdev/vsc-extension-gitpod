@@ -1,0 +1,8 @@
+// ESlint configuration files can be nested. This file enables the
+// mocha environment for all files in this folder but not for files
+// elsewhere.
+{
+    "env": {
+        "mocha": true
+    }
+}
