@@ -5,30 +5,30 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install required tools
-      run: sudo sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && sudo apt-get -y upgrade && sudo apt-get -y install --no-install-recommends libasound2 libgbm1 libgtk-3-0 libnss3 xvfb xauth
-    - uses: actions/checkout@v3
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16.x
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run compile
-    - run: npm run test-ci
-    - run: npm audit
-    - run: npm package
-    - name: Upload package
-      uses: actions/upload-artifact@v3
-      with:
-        name: vsc-example-extension-1.0.0.vsix
-        path: ./vsc-example-extension-1.0.0.vsix
+      - name: Install required tools
+        run: sudo sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && sudo apt-get -y upgrade && sudo apt-get -y install --no-install-recommends libasound2 libgbm1 libgtk-3-0 libnss3 xvfb xauth
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: "npm"
+      - run: npm ci
+      - run: npm run compile
+      - run: npm run test-ci
+      - run: npm audit
+      - run: npm run package
+      - name: Upload package
+        uses: actions/upload-artifact@v3
+        with:
+          name: vsc-example-extension-1.0.0.vsix
+          path: ./vsc-example-extension-1.0.0.vsix
