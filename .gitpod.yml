@@ -14,3 +14,4 @@ vscode:
     - christian-kohler.npm-intellisense
     - eg2.vscode-npm-script
     - esbenp.prettier-vscode
+    - https://github.com/sthdev/vsc-extension-gitpod/releases/download/1.0.0/vsc-example-extension-1.0.0.vsix
